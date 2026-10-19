@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Spanish Level Test (A1–C1)</title>
+<style>
+:root{--g1:#fff4e6;--g2:#e8f0ff;--card:#fff;--tx:#1f2233;--mut:#6a6f85;--ac:#4f6bed;--ac2:#ff8a5b;--ok:#22a06b;--bd:#e3e5ef;--sky:#cfe0ff;--sun:#ffc94d;--h1:#8fd3a8;--h2:#5fb88a;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--g1:#1b1d2b;--g2:#14182a;--card:#23263a;--tx:#f1f2f8;--mut:#a0a5bf;--ac:#7e93ff;--ac2:#ff9f77;--ok:#4cc38a;--bd:#363a52;--sky:#2c3560;--sun:#ffd466;--h1:#2f7a5a;--h2:#256348}}
+:root[data-theme="dark"]{--g1:#1b1d2b;--g2:#14182a;--card:#23263a;--tx:#f1f2f8;--mut:#a0a5bf;--ac:#7e93ff;--ac2:#ff9f77;--ok:#4cc38a;--bd:#363a52;--sky:#2c3560;--sun:#ffd466;--h1:#2f7a5a;--h2:#256348}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%}
+body{background:linear-gradient(160deg,var(--g1),var(--g2)) fixed;color:var(--tx);font-family:"Nunito",system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.5;padding:16px}
+.w{max-width:640px;margin:0 auto}
+.card{background:var(--card);border-radius:22px;padding:24px;box-shadow:0 10px 40px rgba(60,70,140,.15);overflow:hidden}
+h1{font-size:1.7rem;margin:6px 0;line-height:1.2}p{margin:8px 0}.m{color:var(--mut);font-size:.92rem}.c{text-align:center}
+button{font:inherit;cursor:pointer;border-radius:14px;border:2px solid var(--bd);background:var(--card);color:var(--tx);padding:13px 16px;text-align:left;width:100%;margin-top:9px;transition:.15s}
+button:hover{border-color:var(--ac);transform:translateY(-1px)}
+.pri{background:linear-gradient(135deg,var(--ac),#7a5cf0);color:#fff;border:0;text-align:center;font-weight:800;font-size:1.05rem;box-shadow:0 6px 18px rgba(79,107,237,.35)}
+.wa{background:#25d366;color:#fff;border:0;text-align:center;font-weight:800}
+.sec{text-align:center;color:var(--mut);border-style:dashed}
+.top{display:flex;justify-content:space-between;font-size:.85rem;color:var(--mut);margin-bottom:6px}
+.bar{height:10px;background:var(--bd);border-radius:6px;overflow:hidden;margin-bottom:18px}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--ac),var(--ac2));border-radius:6px;transition:width .4s}
+.tag{display:inline-block;font-size:.75rem;font-weight:800;color:var(--ac);background:var(--sky);padding:3px 10px;border-radius:20px}
+.q{font-size:1.3rem;font-weight:800;margin:10px 0 12px}
+.big{font-size:4.2rem;font-weight:900;text-align:center;line-height:1;margin:4px 0;background:linear-gradient(135deg,var(--ac),var(--ac2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.row{display:flex;align-items:center;gap:10px;margin:7px 0;font-size:.9rem}
+.row b{width:28px}.row .t{flex:1;height:12px;background:var(--bd);border-radius:6px;overflow:hidden}
+.row .t i{display:block;height:100%;background:var(--ok);border-radius:6px}.row span{width:34px;text-align:right;color:var(--mut)}
+.fin{margin-top:16px;border-top:1px solid var(--bd);padding-top:4px}
+input,textarea{font:inherit;width:100%;padding:12px 14px;border-radius:12px;border:2px solid var(--bd);background:var(--card);color:var(--tx);margin-top:8px}
+input:focus,textarea:focus{outline:none;border-color:var(--ac)}
+.err{color:#d6455d;font-size:.9rem;min-height:1.2em}
+.box{background:var(--g2);border-radius:16px;padding:16px;margin-top:18px}
+svg{display:block;width:100%;height:auto}
+.cf{position:fixed;top:-20px;width:9px;height:14px;border-radius:2px;animation:fall linear forwards;pointer-events:none;z-index:9}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:.8}}
+@media (prefers-reduced-motion:reduce){.cf{display:none}}
+</style></head><body><div class="w"><div class="card" id="app"></div></div>
+<script>
+var FORM_ID="uulia@hotmail.com"; /* after activating formsubmit.co, replace with the random ID they email you */
+var WA=""; /* Julia’s WhatsApp number: digits only, with country code (e.g. 34600123456) */
+var L=["A1","A2","B1","B2","C1"];
+var Q=[
+["A1","Yo ___ estudiante.",["soy","es","eres","estoy"]],
+["A1","Ella ___ en Madrid.",["vive","vivo","vives","viven"]],
+["A1","Hay ___ libros en la mesa.",["tres","tercer","primera","un"]],
+["A1","Mis padres ___ en una casa grande.",["viven","vive","vivimos","vivís"]],
+["A1","Compramos el pan en la ___.",["panadería","biblioteca","farmacia","carnicería"]],
+["A1","El hijo de mi tío es mi ___.",["primo","sobrino","abuelo","nieto"]],
+["A2","Ayer ___ al cine con mis amigos.",["fui","voy","iré","ir"]],
+["A2","Mi hermana es ___ que yo.",["más alta","más alto","muy que alta","tanta"]],
+["A2","Mañana ___ a visitar a mi abuela.",["voy","fui","iba","vas"]],
+["A2","Cuando era pequeño, siempre ___ al parque.",["iba","fui","voy","iré"]],
+["A2","Mi hermano ___ cansado hoy.",["está","es","están","son"]],
+["A2","Me ___ a las siete todos los días.",["levanto","levanta","levantas","levantan"]],
+["B1","Si mañana llueve, ___ en casa.",["me quedaré","me quedaría","me quedé","me hubiera quedado"]],
+["B1","Vivo en esta ciudad ___ 2015.",["desde","hace","durante","por"]],
+["B1","Quiero que tú ___ conmigo.",["vengas","vienes","vendrás","venir"]],
+["B1","¿Has estado en Sevilla? — Sí, ___ allí el año pasado.",["estuve","he estado","estaba","estaría"]],
+["B1","Este es el chico ___ hermana trabaja conmigo.",["cuya","que su","quien","cual"]],
+["B1","No pude ir a la fiesta ___ estaba enfermo.",["porque","para que","aunque","sin que"]],
+["B2","Si hubiera estudiado más, ___ el examen.",["habría aprobado","aprobaría","aprobé","habré aprobado"]],
+["B2","Dudo que ___ tiempo para acabarlo hoy.",["tengamos","tenemos","tendremos","tuvimos"]],
+["B2","Ojalá ___ más tiempo para viajar.",["tuviera","tengo","tendré","tenía"]],
+["B2","El proyecto se ha retrasado ___ la falta de presupuesto.",["debido a","a pesar de","con tal de","en vez de"]],
+["B2","Me pidió que le ___ la verdad.",["dijera","diga","dice","dirá"]],
+["B2","La empresa decidió ___ el lanzamiento hasta la primavera.",["aplazar","aplicar","aplaudir","aplastar"]],
+["C1","Apenas ___ llegado, sonó el teléfono.",["había","hubiera","he","habría"]],
+["C1","No es que no quiera ayudarte, ___ no puedo.",["sino que","pero que","si no","aunque que"]],
+["C1","Por mucho que ___, no conseguirás convencerlo.",["insistas","insistes","insistirás","insististe"]],
+["C1","Ya es hora de que ___ una decisión.",["tomemos","tomamos","tomaremos","tomar"]],
+["C1","La empresa está al ___ de la quiebra.",["borde","margen","filo","canto"]],
+["C1","La nueva ley ha sido ampliamente ___ como un avance.",["aclamada","aclarada","acalorada","aclimatada"]]
+];
+var app=document.getElementById("app"),i,ans,res,t0,timer,LV,SC,miss,secs,msg;
+function sh(a){a=a.slice();for(var k=a.length-1;k>0;k--){var j=Math.floor(Math.random()*(k+1)),x=a[k];a[k]=a[j];a[j]=x}return a}
+function hero(){return '<svg viewBox="0 0 320 150" role="img" aria-label="Whitewashed Spanish house with an orange tree and speech bubbles saying ¡Hola! and ¿Qué tal?"><rect width="320" height="150" rx="18" fill="var(--sky)"/><circle cx="262" cy="26" r="17" fill="var(--sun)"/><rect y="124" width="320" height="26" fill="#e6c79c"/><rect x="168" y="66" width="108" height="58" fill="#fff"/><path d="M158 68L174 48H270L286 68z" fill="#d9653b"/><path d="M190 124v-24a12 12 0 0 1 24 0v24z" fill="#3b6fd8"/><rect x="176" y="80" width="16" height="16" rx="2" fill="var(--sky)" stroke="#3b6fd8" stroke-width="2"/><rect x="252" y="80" width="16" height="16" rx="2" fill="var(--sky)" stroke="#3b6fd8" stroke-width="2"/><rect x="226" y="80" width="16" height="16" rx="2" fill="var(--sky)" stroke="#3b6fd8" stroke-width="2"/><g fill="#e0455f"><circle cx="180" cy="100" r="3.5"/><circle cx="188" cy="100" r="3.5"/><circle cx="256" cy="100" r="3.5"/><circle cx="264" cy="100" r="3.5"/><circle cx="230" cy="100" r="3.5"/><circle cx="238" cy="100" r="3.5"/></g><rect x="36" y="100" width="6" height="26" fill="#8a5a3c"/><circle cx="39" cy="88" r="22" fill="var(--h2)"/><g fill="#ff9a2e"><circle cx="30" cy="84" r="3.5"/><circle cx="46" cy="80" r="3.5"/><circle cx="40" cy="94" r="3.5"/><circle cx="52" cy="92" r="3.5"/></g><g><rect x="18" y="12" width="92" height="34" rx="16" fill="#fff"/><path d="M44 46l-8 14 22-14z" fill="#fff"/><text x="64" y="36" text-anchor="middle" font-size="18" font-weight="800" fill="#4f6bed" font-family="Nunito,system-ui,sans-serif">¡Hola!</text></g><g><rect x="70" y="54" width="86" height="32" rx="16" fill="#ff8a5b"/><path d="M130 86l8 13-22-13z" fill="#ff8a5b"/><text x="113" y="75" text-anchor="middle" font-size="15" font-weight="800" fill="#fff" font-family="Nunito,system-ui,sans-serif">¿Qué tal?</text></g></svg>'}
+function stairs(n){var h='<svg viewBox="0 0 300 130" role="img" aria-label="Level steps">';for(var k=0;k<5;k++){var ht=24+k*20,y=110-ht,on=k<=n;h+='<rect x="'+(k*58+4)+'" y="'+y+'" width="52" height="'+ht+'" rx="8" fill="'+(on?"var(--ac)":"var(--bd)")+'"'+(k==n?' stroke="var(--ac2)" stroke-width="3"':'')+'/><text x="'+(k*58+30)+'" y="'+(y+20)+'" text-anchor="middle" font-size="14" font-weight="800" fill="'+(on?"#fff":"var(--mut)")+'" font-family="Nunito,system-ui,sans-serif">'+L[k]+'</text>'}
+if(n>=0){var fx=n*58+30,fy=110-(24+n*20)-8;h+='<path d="M'+fx+' '+fy+'v-26" stroke="var(--tx)" stroke-width="2.5"/><path d="M'+fx+' '+(fy-26)+'l20 7-20 7z" fill="var(--ac2)"/>'}else{h+='<text x="150" y="30" text-anchor="middle" font-size="22">🌱</text>'}
+return h+'</svg>'}
+var T={
+title:["What’s your Spanish level?","Koks tavo ispanų kalbos lygis?","Какой у вас уровень испанского?"],
+sub:["A friendly test from A1 to C1 · about 15 minutes · {n} questions · the questions are in Spanish","Draugiškas testas nuo A1 iki C1 · apie 15 minučių · {n} klausimų · klausimai ispanų kalba","Дружелюбный тест от A1 до C1 · около 15 минут · {n} вопросов · вопросы на испанском"],
+intro:["The questions get harder as you go. Not sure of an answer? Press “I don’t know”. You can also stop at any moment and see your level.","Klausimai pamažu darosi sunkesni. Nežinai atsakymo? Spausk „Nežinau“. Gali sustoti bet kada ir pamatyti savo lygį.","Вопросы постепенно усложняются. Не знаете ответ? Нажмите «Не знаю». Вы можете остановиться в любой момент и увидеть свой уровень."],
+startb:["Start the test ✨","Pradėti testą ✨","Начать тест ✨"],
+idk:["I don’t know","Nežinau","Не знаю"],
+stop:["Stop here and show my level","Sustoti ir parodyti mano lygį","Остановиться и показать мой уровень"],
+well:["🎉 Well done!","🎉 Puikiai!","🎉 Отлично!"],
+ans:["You answered {a} of {b} questions. Your level is","Atsakei į {a} iš {b} klausimų. Tavo lygis:","Вы ответили на {a} из {b} вопросов. Ваш уровень:"],
+beg:["Absolute beginner","Visiškai pradedantysis","Абсолютный новичок"],
+note:["Your level is the highest one where you got at least 4 of 6 right, with all lower levels passed. This is a quick estimate, not an official exam.","Tavo lygis – aukščiausias, kuriame teisingai atsakei bent į 4 iš 6 klausimų, o visi žemesni lygiai įveikti. Tai greitas įvertinimas, o ne oficialus egzaminas.","Ваш уровень – самый высокий, на котором вы ответили правильно минимум на 4 из 6 вопросов, при условии что все предыдущие уровни пройдены. Это быстрая оценка, а не официальный экзамен."],
+ft:["💬 Please share your results with Julia","💬 Pasidalink rezultatais su Julija","💬 Поделитесь результатами с Юлией"],
+fs:["Let’s book a free lesson!","Užsisakykime nemokamą pamoką!","Давайте запишемся на бесплатный урок!"],
+nmph:["Your name","Tavo vardas","Ваше имя"],
+sendb:["Share my results","Pasidalinti rezultatais","Поделиться результатами"],
+sending:["Sending…","Siunčiama…","Отправка…"],
+thanks:["Thank you! 🌟","Ačiū! 🌟","Спасибо! 🌟"],
+saved:["Your results have been sent to Julia. She will message you on WhatsApp soon.","Rezultatai išsiųsti Julijai. Netrukus ji parašys tau per WhatsApp.","Результаты отправлены Юлии. Скоро она напишет вам в WhatsApp."],
+nsaved:["We couldn’t send your results automatically. Please copy them and send them to Julia.","Nepavyko išsiųsti rezultatų automatiškai. Nukopijuok juos ir atsiųsk Julijai.","Не удалось отправить результаты автоматически. Скопируйте их и отправьте Юлии."],
+wab:["Send on WhatsApp","Siųsti per WhatsApp","Отправить в WhatsApp"],
+cp:["Copy my results","Kopijuoti rezultatus","Скопировать результаты"],
+cpd:["Copied ✓","Nukopijuota ✓","Скопировано ✓"],
+again:["Take the test again","Atlikti testą iš naujo","Пройти тест заново"]};
+var NM={A1:["Beginner","Pradedantysis","Начальный"],A2:["Elementary","Pradinis","Элементарный"],B1:["Intermediate","Vidutinis","Средний"],B2:["Upper-intermediate","Aukštesnis nei vidutinis","Выше среднего"],C1:["Advanced","Pažengęs","Продвинутый"]};
+var CANL={A0:["You are at the very start of your Spanish journey, and that is a great place to begin!","Esi pačioje ispanų kalbos kelio pradžioje – puiki vieta pradėti!","Вы в самом начале пути в испанском – отличное место для старта!"],
+A1:["You understand and use familiar everyday expressions and very basic phrases.","Supranti ir vartoji įprastas kasdienes frazes bei labai paprastus sakinius.","Вы понимаете и используете знакомые повседневные выражения и совсем простые фразы."],
+A2:["You can talk about routines, family, shopping and simple events in the past.","Gali kalbėti apie kasdienybę, šeimą, apsipirkimą ir paprastus praeities įvykius.","Вы можете говорить о распорядке дня, семье, покупках и простых событиях в прошлом."],
+B1:["You can handle most travel situations and describe experiences, plans and opinions.","Gali susikalbėti daugelyje kelionių situacijų, apibūdinti patirtį, planus ir nuomonę.","Вы справляетесь с большинством ситуаций в поездках и можете рассказать об опыте, планах и мнениях."],
+B2:["You can interact fluently and discuss a wide range of topics in detail.","Gali sklandžiai bendrauti ir išsamiai aptarti daugybę temų.","Вы можете свободно общаться и подробно обсуждать самые разные темы."],
+C1:["You can express yourself fluently and precisely for social, academic and professional purposes.","Gali sklandžiai ir tiksliai reikšti mintis socialiniame, akademiniame ir profesiniame gyvenime.","Вы выражаете мысли свободно и точно в быту, учёбе и работе."]};
+var lang=0,scr="start",sent=false,sName="",sSaved=false;
+function t(k){return T[k][lang]}
+function pills(){return '<div style="display:flex;gap:6px;justify-content:center;margin-bottom:12px">'+["EN","LT","RU"].map(function(x,n){return '<button style="width:auto;margin:0;padding:6px 14px;text-align:center;font-weight:800;'+(n==lang?'background:var(--ac);color:#fff;border-color:var(--ac)':'')+'" onclick="setLang('+n+')">'+x+'</button>'}).join("")+'</div>'}
+function setLang(n){lang=n;if(scr=="start")start();else if(scr=="q")show();else fin(true)}
+function start(){scr="start";clearInterval(timer);sent=false;app.innerHTML=pills()+hero()+'<h1 class="c">'+t("title")+'</h1><p class="c">'+t("sub").replace("{n}",Q.length)+'</p><p class="m c">'+t("intro")+'</p><button class="pri" onclick="go()">'+t("startb")+'</button>'}
+function go(){i=0;ans=[];t0=Date.now();clearInterval(timer);timer=setInterval(tick,1000);show()}
+function tick(){var e=document.getElementById("tm");if(!e)return;var s=Math.floor((Date.now()-t0)/1000);e.textContent="⏱ "+Math.floor(s/60)+":"+("0"+s%60).slice(-2)}
+function show(){
+scr="q";if(i>=Q.length)return fin();
+var q=Q[i],o=sh(q[2].map(function(x,n){return[x,n==0]}));
+var h=pills()+'<div class="top"><span class="tag">'+(i+1)+' / '+Q.length+'</span><span id="tm">⏱ 0:00</span></div><div class="bar"><i style="width:'+(i/Q.length*100)+'%"></i></div><p class="q">'+q[1]+'</p>';
+o.forEach(function(x){h+='<button data-c="'+(x[1]?1:0)+'">'+x[0]+'</button>'});
+h+='<button class="sec" data-c="2">'+t("idk")+'</button><div class="fin"><button class="sec" id="stop">'+t("stop")+'</button></div>';
+app.innerHTML=h;tick();
+app.querySelectorAll("button[data-c]").forEach(function(b){b.onclick=function(){ans.push(b.dataset.c==="1");i++;show()}});
+document.getElementById("stop").onclick=function(){fin()}}
+function confetti(){var c=["#4f6bed","#ff8a5b","#ffc94d","#22a06b","#e0559f"];for(var k=0;k<46;k++){var s=document.createElement("span");s.className="cf";s.style.left=Math.random()*100+"vw";s.style.background=c[k%5];s.style.animationDuration=(2.5+Math.random()*2.5)+"s";s.style.animationDelay=(Math.random()*.8)+"s";document.body.appendChild(s);setTimeout(function(e){e.remove()},6500,s)}}
+function fin(re){
+scr="res";clearInterval(timer);if(!re)secs=Math.floor((Date.now()-t0)/1000);
+res={};var lv=-1,ok=true;miss=[];SC=[];
+L.forEach(function(l,n){var qs=0,c=0;Q.forEach(function(q,k){if(q[0]==l){qs++;if(ans[k])c++;else if(k<ans.length)miss.push(l+": "+q[1])}});res[l]=[c,qs];SC.push(l+" "+c+"/"+qs);
+if(ok&&c/qs>=0.66){lv=n}else ok=false});
+LV=lv<0?"Pre-A1":L[lv];
+var h=pills()+'<h1 class="c">'+t("well")+'</h1><p class="c m">'+t("ans").replace("{a}",ans.length).replace("{b}",Q.length)+'</p><div class="big">'+LV+'</div><p class="c" style="font-weight:800;margin-top:0">'+(lv<0?t("beg"):NM[LV][lang])+'</p>'+stairs(lv)+'<p class="c">'+CANL[lv<0?"A0":LV][lang]+'</p>';
+L.forEach(function(l){var r=res[l];h+='<div class="row"><b>'+l+'</b><div class="t"><i style="width:'+(r[0]/r[1]*100)+'%"></i></div><span>'+r[0]+'/'+r[1]+'</span></div>'});
+h+='<p class="m">'+t("note")+'</p>';
+h+='<div class="box" id="fm"><p style="font-weight:800;margin:0">'+t("ft")+'</p><p class="m" style="margin:4px 0">'+t("fs")+'</p><div class="err" id="er"></div><button class="pri" id="sd">'+t("sendb")+'</button></div>';
+h+='<button class="sec" onclick="start()">'+t("again")+'</button>';
+app.innerHTML=h;
+if(!re){window.scrollTo(0,0);confetti()}
+if(sent)doneView();else document.getElementById("sd").onclick=send}
+async function send(){
+var n="Student",p="";
+var b=document.getElementById("sd");b.disabled=true;b.textContent=t("sending");
+var saved=false;
+var text="FREE LESSON REQUESTED\nLevel: "+LV+" ("+SC.join(", ")+")\nAnswered: "+ans.length+"/"+Q.length+"\nTime: "+secs+" s\nMissed or skipped:\n"+miss.join("\n");
+try{var r=await fetch("https://formsubmit.co/ajax/"+FORM_ID,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify({_subject:"Spanish level test – "+LV,_captcha:"false",_template:"table",name:n,whatsapp:p,level:LV,scores:SC.join(", "),time_seconds:secs,message:text})});var j=await r.json();saved=r.ok&&String(j.success)!=="false"}catch(e){}
+msg="Hi Julia! I just did your Spanish level test and I would like my free lesson.\nLevel: "+LV+" ("+SC.join(", ")+")\nAnswered: "+ans.length+"/"+Q.length+" in "+Math.floor(secs/60)+" min "+secs%60+" s";
+sent=true;sName=n;sSaved=saved;doneView()}
+function doneView(){
+var h='<div class="c" style="font-size:2.4rem">💌</div><p class="c" style="font-weight:800;margin:0" id="ty"></p><p class="m c">'+(sSaved?t("saved"):t("nsaved"))+'</p>';
+if(WA)h+='<a href="https://wa.me/'+WA+'?text='+encodeURIComponent(msg)+'" target="_blank" rel="noopener"><button class="wa">'+t("wab")+'</button></a>';
+h+='<textarea id="tx" rows="5" readonly></textarea><button id="cp" class="pri">'+t("cp")+'</button>';
+document.getElementById("fm").innerHTML=h;document.getElementById("ty").textContent=t("thanks").replace("{n}",sName);document.getElementById("tx").value=msg;
+document.getElementById("cp").onclick=function(){var x=document.getElementById("tx");x.select();try{navigator.clipboard.writeText(msg)}catch(e){try{document.execCommand("copy")}catch(e2){}}this.textContent=t("cpd")}}
+start();
+</script></body></html>
